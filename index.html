@@ -7,25 +7,142 @@
   <meta name="description" content="The Portfolio">
   <meta name="author" content="Jonathan Garrity">
 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
   <link rel="stylesheet" href="css/style.css">
+
 </head>
 
-<body>
+<body class="listing_page">
 
   <div class="navigation">
     <a class="filter" href="#">Filter</a>
-    <div class="logo"><img src="assets/logo.gif" /></div>
+      <a href="index.html" class="logo"><img src="assets/logo.gif" /></a>
     <div class="nav-links">
-      <a href="#">About me</a>
+      <a href="#">About Me</a>
       <a href="#">Contact</a>
     </div>
   </div>
 
-  <div class="content">
+  <div class="content home_page" data-section-name="intro">
+    <div class="logo_animation"></div>
+  </div>
+
+  <div class="content playing_cards" data-section-name="fairline">
+      <h2>playing card concept</h2>
+     <a href="playingcards.html">EXPLORE</a>
+  </div>
+
+  <a class="more_projects" href="#">More Projects</a>
 
   </div>
 
-  <!-- <script src="js/scripts.js"></script> -->
+  <div class="content dimplex_website" data-section-name="dimplex">
+      <h2>Dimplex Website Design</h2>
+     <a href="dimplex.html">EXPLORE</a>
+  </div>
+
+  <div class="content fairview_land_acquisition" data-section-name="fairview">
+      <h2>Fairview Land Acquisition</h2>
+     <a href="landacquisition.html">EXPLORE</a>
+  </div>
+
+  <div class="content regency_heights" data-section-name="regencyheights">
+      <h2>Fairview Regency Heights</h2>
+     <a href="regencyheights.html">EXPLORE</a>
+  </div>
+
+  <div class="content burrington_website" data-section-name="burrington">
+    <h2>Burrington Website</h2>
+     <a href="burringtons.html">EXPLORE</a>
+  </div>
+
+  <div class="content fairview_events_page" data-section-name="fairviewevents">
+    <h2>Fairview Events Page</h2>
+     <a href="events_page.html">EXPLORE</a>
+  </div>
+
+  <div class="content bloor_image_retouch" data-section-name="bloor">
+      <h2>Bloor Image Retouching</h2>
+     <a href="#">EXPLORE</a>
+  </div>
+
+  <div class="content linden_image_retouch" data-section-name="linden">
+      <h2>Linden Image Retouching</h2>
+     <a href="#">EXPLORE</a>
+  </div>
+
+  <div class="content thames_water" data-section-name="thames">
+    <h2>Thames Water Campaign</h2>
+     <a href="#thameswater">EXPLORE</a>
+  </div>
+
+  <div class="content abbeyfield" data-section-name="abbeyfield">
+    <h2>Abbeyfield Floorplans</h2>
+     <a href="#">EXPLORE</a>
+  </div>
+
+  <div class="content bloor_social" data-section-name="bloorsocial">
+    <h2>Bloor Social</h2>
+     <a href="#">EXPLORE</a>
+  </div>
+
+  <div class="content hoburne" data-section-name="hoburne">
+      <h2>Hoburne Artworking</h2>
+     <a href="#">EXPLORE</a>
+  </div>
+
+  <div class="content linden_social" data-section-name="lindensocial">
+      <h2>Linden Social</h2>
+     <a href="#">EXPLORE</a>
+  </div>
+
+
+  <a href="#intro" class="back-to-top">&uarr;</a>
+
+  </div>
+
+  <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+  <script src="js/jquery.scrollify.js"></script>
+  <script>
+    $(function() {
+      $.scrollify({
+        section : ".content",
+        before:function(i,panels) {
+          var ref = panels[i].attr("data-section-name");
+          $(".pagination .active").removeClass("active");
+          $(".pagination").find("a[href=\"#" + ref + "\"]").addClass("active");
+
+          if(i > 0) {
+            $('.logo').addClass('show_logo');
+            $('.back-to-top').addClass('show_top');
+          } else {
+            $('.logo').removeClass('show_logo');
+            $('.back-to-top').removeClass('show_top');
+          }
+        },
+        afterRender:function() {
+          var pagination = "<div class=\"pagination\">";
+          var activeClass = "";
+          $(".content").each(function(i) {
+            activeClass = "";
+            if(i===0) {
+              activeClass = "active";
+            }
+            pagination += "<a class=\"" + activeClass + "\" href=\"#" + $(this).attr("data-section-name") + "\"></a>";
+          });
+
+          pagination += "</div>";
+
+          $("body").append(pagination);
+
+          $(".pagination a").on("click",$.scrollify.move);
+
+          $(".back-to-top").on("click",$.scrollify.move);
+        }
+      });
+    });
+  </script>
+
 </body>
 
 </html>

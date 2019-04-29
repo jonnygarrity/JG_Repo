@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Jonathan Garrity - Portfolio</title>
+  <meta name="description" content="The Portfolio">
+  <meta name="author" content="Jonathan Garrity">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+  <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+
+</head>
+
+<body class="case_study dimplex">
+
+  <div class="navigation">
+    <a class="filter" href="#">Filter</a>
+    <a href="index.html" class="logo"><img src="assets/logo.gif" /></a>
+    <div class="nav-links">
+      <a href="#">About Me</a>
+      <a href="#">Contact</a>
+    </div>
+  </div>
+
+  <h1>WEBSITE DESIGN FOR DIMPLEX</h1>
+
+  <img class="top_image" src="assets/dimplex_V2.png" />
+
+<p>Dimplex required an updated website for their Opti-Myst range of stoves and fireplaces.</p>
+<p>A new site was created, based on the existing palette of the Dimplex website, but with the introduction of more brand-specific colours. A combination of static and dynamic assets were used to create a more graphic-heavy site, which thoroughly complimented the brand and the product.</p>
+<p>The resulting website was a more customer-friendly browsing experience, with a more comprehensive layout for viewing the product categories.</p>
+
+  <div class="main-carousel">
+    <div class="carousel-cell">
+      <img src="assets/Dimplex-Website-Slider_01.png" />
+    </div>
+    <div class="carousel-cell">
+      <img src="assets/Dimplex-Website-Slider_02.png" />
+    </div>
+    <div class="carousel-cell">
+      <img src="assets/Dimplex-Website-Slider_03.jpg" />
+    </div>
+  </div>
+
+
+  <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+  <script>
+    $('.main-carousel').flickity({
+      // options
+      cellAlign: 'left',
+      contain: true,
+      autoPlay: 3000,
+      pauseAutoPlayOnHover: true
+    });
+  </script>
+
+</body>
+
+</html>
